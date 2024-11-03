@@ -33,7 +33,7 @@ O `DesafioProjetoAnaliseDocumentos` é uma aplicação que utiliza inteligência
 Este projeto é licenciado sob os termos da licença especificada no arquivo [LICENSE](LICENSE).
 
 ## Termos de uso
-Este projeto segue os termos de uso especificados em [Termos de Uso - DIO](https://app.dio.me/terms/){:target="_blank"}
+Este projeto segue os termos de uso especificados em <a href="https://app.dio.me/terms/" target="_blank">Termos de Uso - DIO</a>
 
 ## Contribuição
 Sinta-se à vontade para contribuir com o projeto. Faça um fork do repositório, crie um branch para suas alterações e submeta um pull request.
