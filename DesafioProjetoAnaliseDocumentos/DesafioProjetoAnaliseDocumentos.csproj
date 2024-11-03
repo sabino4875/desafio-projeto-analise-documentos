@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+	<PublishRelease>true</PublishRelease>
+	<PackageId>DesafioProjetoAnaliseDocumentos</PackageId>
+	<RootNamespace>DesafioProjetoAnaliseDocumentos</RootNamespace>
+	<Version>1.0.1</Version>
+	<Authors>Leonardo Buta</Authors>
+	<Company>Dio</Company>
+	<GenerateDocumentationFile>false</GenerateDocumentationFile>
+	<DocumentationFile>documentation/desafio.xml</DocumentationFile>
+	<AnalysisMode>All</AnalysisMode>
+	<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Uploads\" />
+    <Folder Include="wwwroot\lib\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.AI.FormRecognizer" Version="4.1.0" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.22.2" />
+    <PackageReference Include="Serilog" Version="4.1.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="8.0.3" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
+  </ItemGroup>
+
+</Project>
