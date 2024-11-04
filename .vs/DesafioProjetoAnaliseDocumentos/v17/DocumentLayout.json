@@ -1,17 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\projects\\DesafioProjetoAnaliseDocumentos\\",
+  "WorkspaceRootPath": "C:\\projects\\Dio\\desafio-projeto-analise-documentos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9BA154BC-0838-4ECF-8FD4-D715553EF2B4}|DesafioProjetoAnaliseDocumentos\\DesafioProjetoAnaliseDocumentos.csproj|c:\\projects\\desafioprojetoanalisedocumentos\\desafioprojetoanalisedocumentos\\services\\azuredocumentinteligenceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BA154BC-0838-4ECF-8FD4-D715553EF2B4}|DesafioProjetoAnaliseDocumentos\\DesafioProjetoAnaliseDocumentos.csproj|solutionrelative:desafioprojetoanalisedocumentos\\services\\azuredocumentinteligenceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9BA154BC-0838-4ECF-8FD4-D715553EF2B4}|DesafioProjetoAnaliseDocumentos\\DesafioProjetoAnaliseDocumentos.csproj|c:\\projects\\dio\\desafio-projeto-analise-documentos\\desafioprojetoanalisedocumentos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BA154BC-0838-4ECF-8FD4-D715553EF2B4}|DesafioProjetoAnaliseDocumentos\\DesafioProjetoAnaliseDocumentos.csproj|solutionrelative:desafioprojetoanalisedocumentos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9BA154BC-0838-4ECF-8FD4-D715553EF2B4}|DesafioProjetoAnaliseDocumentos\\DesafioProjetoAnaliseDocumentos.csproj|c:\\projects\\desafioprojetoanalisedocumentos\\desafioprojetoanalisedocumentos\\context\\azuredocumentinteligencecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BA154BC-0838-4ECF-8FD4-D715553EF2B4}|DesafioProjetoAnaliseDocumentos\\DesafioProjetoAnaliseDocumentos.csproj|solutionrelative:desafioprojetoanalisedocumentos\\context\\azuredocumentinteligencecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9BA154BC-0838-4ECF-8FD4-D715553EF2B4}|DesafioProjetoAnaliseDocumentos\\DesafioProjetoAnaliseDocumentos.csproj|c:\\projects\\desafioprojetoanalisedocumentos\\desafioprojetoanalisedocumentos\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9BA154BC-0838-4ECF-8FD4-D715553EF2B4}|DesafioProjetoAnaliseDocumentos\\DesafioProjetoAnaliseDocumentos.csproj|c:\\projects\\dio\\desafio-projeto-analise-documentos\\desafioprojetoanalisedocumentos\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9BA154BC-0838-4ECF-8FD4-D715553EF2B4}|DesafioProjetoAnaliseDocumentos\\DesafioProjetoAnaliseDocumentos.csproj|solutionrelative:desafioprojetoanalisedocumentos\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -27,40 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AzureDocumentInteligenceService.cs",
-              "DocumentMoniker": "C:\\projects\\DesafioProjetoAnaliseDocumentos\\DesafioProjetoAnaliseDocumentos\\Services\\AzureDocumentInteligenceService.cs",
-              "RelativeDocumentMoniker": "DesafioProjetoAnaliseDocumentos\\Services\\AzureDocumentInteligenceService.cs",
-              "ToolTip": "C:\\projects\\DesafioProjetoAnaliseDocumentos\\DesafioProjetoAnaliseDocumentos\\Services\\AzureDocumentInteligenceService.cs",
-              "RelativeToolTip": "DesafioProjetoAnaliseDocumentos\\Services\\AzureDocumentInteligenceService.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAA4wDUAAAAZAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\projects\\Dio\\desafio-projeto-analise-documentos\\DesafioProjetoAnaliseDocumentos\\Program.cs",
+              "RelativeDocumentMoniker": "DesafioProjetoAnaliseDocumentos\\Program.cs",
+              "ToolTip": "C:\\projects\\Dio\\desafio-projeto-analise-documentos\\DesafioProjetoAnaliseDocumentos\\Program.cs",
+              "RelativeToolTip": "DesafioProjetoAnaliseDocumentos\\Program.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAgwDEAAABoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-03T14:52:52.939Z",
+              "WhenOpened": "2024-11-04T10:38:27.19Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AzureDocumentInteligenceContext.cs",
-              "DocumentMoniker": "C:\\projects\\DesafioProjetoAnaliseDocumentos\\DesafioProjetoAnaliseDocumentos\\Context\\AzureDocumentInteligenceContext.cs",
-              "RelativeDocumentMoniker": "DesafioProjetoAnaliseDocumentos\\Context\\AzureDocumentInteligenceContext.cs",
-              "ToolTip": "C:\\projects\\DesafioProjetoAnaliseDocumentos\\DesafioProjetoAnaliseDocumentos\\Context\\AzureDocumentInteligenceContext.cs",
-              "RelativeToolTip": "DesafioProjetoAnaliseDocumentos\\Context\\AzureDocumentInteligenceContext.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAA0wDQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-03T14:52:27.245Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\projects\\DesafioProjetoAnaliseDocumentos\\DesafioProjetoAnaliseDocumentos\\Controllers\\HomeController.cs",
+              "DocumentMoniker": "C:\\projects\\Dio\\desafio-projeto-analise-documentos\\DesafioProjetoAnaliseDocumentos\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "DesafioProjetoAnaliseDocumentos\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\projects\\DesafioProjetoAnaliseDocumentos\\DesafioProjetoAnaliseDocumentos\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\projects\\Dio\\desafio-projeto-analise-documentos\\DesafioProjetoAnaliseDocumentos\\Controllers\\HomeController.cs",
               "RelativeToolTip": "DesafioProjetoAnaliseDocumentos\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAMwBcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-03T11:53:27.397Z",
+              "WhenOpened": "2024-11-04T10:16:57.811Z",
               "EditorCaption": ""
             }
           ]

@@ -2,20 +2,22 @@
 {
     using Azure.AI.FormRecognizer.DocumentAnalysis;
     using DesafioProjetoAnaliseDocumentos.Context;
+    using Serilog;
     using System;
-    using System.IO;
+    using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
 
     public interface IAzureDocumentInteligenceService : IDisposable
     {
-        Task ReadDocument(Uri document);
+        Task<Dictionary<String, String>> ReadDocument(Uri document);
     }
 
     public class AzureDocumentInteligenceService : IAzureDocumentInteligenceService
     {
         private Boolean _disposable;
         private readonly IAzureDocumentInteligenceContext _context;
+        private readonly ILogger _logger;
 
         public AzureDocumentInteligenceService(IAzureDocumentInteligenceContext context) 
         { 
@@ -23,6 +25,7 @@
 
             _disposable = true;
             _context = context;
+            _logger = Log.ForContext<AzureDocumentInteligenceService>();
         }
 
         protected virtual void Dispose(Boolean disposing)
@@ -45,13 +48,37 @@
             Dispose(false);
         }
 
-        public async Task ReadDocument(Uri document)
+        public async Task<Dictionary<String, String>> ReadDocument(Uri document)
         {
-            String modelId = "prebuilt-creditcard";
-            AnalyzeDocumentOptions options = new AnalyzeDocumentOptions();
-            CancellationToken cancellationToken = new CancellationToken();
+            try
+            {
+                String modelId = "prebuilt-creditcard";
+                AnalyzeDocumentOptions options = new();
+                CancellationToken cancellationToken = new();
 
-            var result = await _context.Client.AnalyzeDocumentFromUriAsync(Azure.WaitUntil.Completed, modelId, document, options, cancellationToken).ConfigureAwait(false);
+                var result = new Dictionary<String, String>();
+
+                var data = await _context.Client.AnalyzeDocumentFromUriAsync(Azure.WaitUntil.Completed, modelId, document, options, cancellationToken).ConfigureAwait(false);
+                if (data.Value != null)
+                {
+                    if (data.Value.Documents.Count > 0)
+                    {
+                        if (data.Value.Documents[0].Fields.Count > 0)
+                        {
+                            foreach (var field in data.Value.Documents[0].Fields)
+                            {
+                                result.Add(field.Key, field.Value.Content);
+                            }
+                        }
+                    }
+                }
+                return result;
+            }
+            catch (ApplicationException e)
+            {
+                _logger.Error(e, "Houve um erro ao tentar ler os dados da imagem.");
+                throw;
+            }
         }
     }
 }

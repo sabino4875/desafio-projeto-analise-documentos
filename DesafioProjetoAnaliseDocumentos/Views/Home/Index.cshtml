@@ -7,7 +7,7 @@
 <form asp-controller="Home" asp-action="Upload" class="form" enctype="multipart/form-data" method="post">
     <div class="mb-3">
         <label asp-for="File" class="form-label"></label>
-        <input asp-for="File" type="file" class="form-control" accept=".bmp, .jpg, .jpeg, .png" />
+        <input asp-for="File" type="file" class="form-control" accept=".bmp, .jpg, .jpeg, .png, .pdf" />
         <span asp-validation-for="File" class="form-text text-danger"></span>
     </div>
     <button type="submit" class="btn btn-primary">Enviar</button>
@@ -18,7 +18,44 @@
         @ViewBag.Message
     </div>
 }
-
+@if(ViewBag.Data != null)
+{
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Image analisys result</h5>
+            <p class="card-text">
+                @if (((Dictionary<String, String>)ViewBag.Data).Count > 0)
+                {
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Column</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (var pos = 0; pos < ((Dictionary<String, String>)ViewBag.Data).Count; pos++)
+                            {
+                                <tr>
+                                    <td>@pos+1</td>
+                                    <td>@((Dictionary<String, String>)ViewBag.Data).Key</td>
+                                    <td>@((Dictionary<String, String>)ViewBag.Data).Value</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <div class="alert alert-danger">
+                      Não há dados para exibição.
+                    </div>
+                }
+            </p>
+        </div>
+    </div>
+}
 
 <partial name="_ValidationScriptsPartial" />
 
