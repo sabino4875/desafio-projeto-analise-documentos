@@ -16,14 +16,17 @@ namespace DesafioProjetoAnaliseDocumentos.Controllers
         private readonly IWebHostEnvironment _environment;
         private readonly ILogger _logger = Log.ForContext<HomeController>();
         private readonly IAzureStorageService _azureStorageService;
+        private readonly IAzureDocumentInteligenceService _inteligenceService;
 
-        public HomeController(IWebHostEnvironment environment, IAzureStorageService service)
+        public HomeController(IWebHostEnvironment environment, IAzureStorageService storageService, IAzureDocumentInteligenceService inteligenceService)
         {
             ArgumentNullException.ThrowIfNull(environment, nameof(environment));
-            ArgumentNullException.ThrowIfNull(service, nameof(service));
+            ArgumentNullException.ThrowIfNull(storageService, nameof(storageService));
+            ArgumentNullException.ThrowIfNull(inteligenceService, nameof(inteligenceService));
 
             _environment = environment;
-            _azureStorageService = service; 
+            _azureStorageService = storageService;
+            _inteligenceService = inteligenceService;
         }
 
         public IActionResult Index()
@@ -68,7 +71,9 @@ namespace DesafioProjetoAnaliseDocumentos.Controllers
                     memoryStream.Seek(0, SeekOrigin.Begin);
                     filename = $"{Guid.NewGuid().ToString().Replace("-", "_", StringComparison.OrdinalIgnoreCase).ToUpper(CultureInfo.CurrentCulture)}{GetFileExtension(memoryStream)}";
                     var uri = await _azureStorageService.SaveImage(filename, memoryStream).ConfigureAwait(false);
-                    var sample = "";
+
+                    var data = await _inteligenceService.ReadDocument(uri).ConfigureAwait(false);
+                    ViewBag.Data = data;
                 }
 
                 ViewBag.Message = "Arquivo enviado com sucesso!";
@@ -88,7 +93,7 @@ namespace DesafioProjetoAnaliseDocumentos.Controllers
                 stream.Seek(0, SeekOrigin.Begin);
 
                 // Verify the first bytes for diferent image file type
-                if (IsJpeg(buffer) || IsPng(buffer) || IsBmp(buffer))
+                if (IsJpeg(buffer) || IsPng(buffer) || IsBmp(buffer) || IsPdf(buffer))
                 {
                     return true;
                 }
@@ -115,6 +120,7 @@ namespace DesafioProjetoAnaliseDocumentos.Controllers
                 if (IsJpeg(buffer)) return ".jpg";
                 if (IsPng(buffer)) return ".png";
                 if (IsBmp(buffer)) return ".bmp";
+                if (IsPdf(buffer)) return ".pdf";
                 return String.Empty;
             }
             catch (ApplicationException e)
@@ -143,6 +149,11 @@ namespace DesafioProjetoAnaliseDocumentos.Controllers
             return buffer[0] == 0x42 && buffer[1] == 0x4D;
         }
 
+        private static Boolean IsPdf(Byte[] buffer)
+        {
+            //PDF Signature: 25 50 44 46 2D
+            return buffer[0] == 0x25 && buffer[1] == 0x50 && buffer[2] == 0x44 && buffer[3] == 0x46 && buffer[4] == 0x2D;
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

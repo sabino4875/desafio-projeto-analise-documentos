@@ -46,6 +46,8 @@ namespace DesafioProjetoAnaliseDocumentos
             builder.Services.AddScoped<IAzureStorageContext, AzureStorageContext>();
             builder.Services.AddScoped<IAzureStorageService, AzureStorageService>();
 
+            builder.Services.AddScoped<IAzureDocumentInteligenceContext, AzureDocumentInteligenceContext>();
+            builder.Services.AddScoped<IAzureDocumentInteligenceService, AzureDocumentInteligenceService>();
 
             var app = builder.Build();
 
