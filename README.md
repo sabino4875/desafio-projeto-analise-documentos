@@ -45,5 +45,4 @@ Sinta-se à vontade para contribuir com o projeto. Faça um fork do repositório
 * [Document Intelligence credit card model](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/credit-card?view=doc-intel-4.0.0#try-credit-card-data-extraction)
 * [Document Signatures](https://www.garykessler.net/library/file_sigs.html)
 
-
 ### Texto gerado por IA e revisado por humano
